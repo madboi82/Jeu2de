@@ -13,8 +13,8 @@
 			text-align: center;
 			margin: 0;
 			padding: 0;
-			overflow: hidden;
 		}
+
 		canvas {
 			position: fixed;
 			top: 0;
@@ -23,6 +23,7 @@
 			height: 100%;
 			z-index: -1;
 		}
+
 		#game-container {
 			position: absolute;
 			top: 50%;
@@ -40,59 +41,96 @@
 			box-shadow: 0 0 50px #c6c7c7;
 			border-radius: 20px;
 		}
+
 		h1 {
-			font-size: 48px;
+			font-size: 36px;
 			margin: 0;
-			margin-bottom: 32px;
+			margin-bottom: 16px;
 		}
+
 		button {
 			background-color: #c6c7c7;
 			border: none;
 			color: black;
-			font-size: 24px;
+			font-size: 18px;
 			font-family: 'Press Start 2P', cursive;
 			cursor: pointer;
-			padding: 16px 32px;
+			padding: 12px 24px;
 			border-radius: 10px;
-			margin-bottom: 16px;
+			margin-bottom: 12px;
 			transition: all 0.2s ease-in-out;
 		}
+
 		button:hover {
 			background-color: #ff9f1c;
 			color: white;
 			box-shadow: 0 0 10px #ff9f1c;
 		}
-		#player1-score, #player2-score, #current-score {
-			font-size: 24px;
-			margin: 8px;
+
+		#player1-score,
+		#player2-score,
+		#current-score {
+			font-size: 18px;
+			margin: 6px;
 		}
+
 		#player1-score::before {
 			content: "Joueur 1 : ";
 		}
+
 		#player2-score::before {
 			content: "Joueur 2 : ";
 		}
+
 		#current-score::before {
 			content: "Score actuel : ";
 		}
+
+		@media only screen and (max-width: 600px) {
+      
+			h1 {
+				font-size: 20px;
+				margin-bottom: 32px;
+			}
+
+			button {
+				font-size: 16px;
+				padding: 16px 32px;
+				margin-bottom: 16px;
+			}
+
+			#player1-score,
+			#player2-score,
+			#current-score {
+				font-size: 16px;
+				margin: 8px;
+			}
+		}
+
+    
 	</style>
 	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-	<canvas></canvas>
+
+
 	<div id="game-container">
+
+
 		<h1>Jeu de dé</h1>
 		<div id="player1-score">Joueur 1 : 0</div>
 		<div id="player2-score">Joueur 2 : 0</div>
 		<div id="current-score">Score actuel : 0</div>
-		<button id="roll-btn">Lancer le dé</button>
+		<canvas id="dice-canvas"></canvas>
+		<button id="roll-btn">Lancer le dé</button> 
 		<button id="hold-btn">Garder le score</button>
+    <button id="restart-btn">Relancer la partie</button>
+      
 	</div>
 
 	<script src="jeu2dé.js"></script>
 </body>
 </html>
-
 
 
 
